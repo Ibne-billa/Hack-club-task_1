@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Ibne_billa</a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="home" class="home">
+        <div class="meow"><h3>Hello<br> 
+        This is <span>Waleed</span><br></h3>
+        <p>Come with me on a journey through the galaxy</p>
+    </div>
+        <video class="video" id="video" width="100%" autoplay muted loop><source src="210884_medium.mp4" type="video/mp4"></video>
+    </section>
+    <section id="about">
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="image">
+                <img src="shutterstock-1558058690-ezgif.com-webp-to-jpg-converter.jpg" alt="earth">
+            </div>
+            <div class="text">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, modi officiis vero quisquam pariatur eos tenetur molestiae qui, est provident maiores? Quae est aliquam rerum consequatur vel, aperiam delectus sint.
+                </p>
+            </div>
+    
+            <!-- Row 2 -->
+            <div class="text">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi reiciendis nam fuga! Eius, inventore delectus nam cum quisquam aliquam, dolor numquam nemo, exercitationem ratione est iste. Placeat, vel? Animi, delectus?
+                </p>
+            </div>
+            <div class="image">
+                <img src="fea-J1407_RonMiller_2015.jpg" alt="super_saturn">
+            </div>
+    
+            <!-- Row 3 -->
+            <div class="image">
+                <img src="space-pillars-of-creation-nircam-image-hd-wallpaper-uhdpaper.com-496@0@h.jpg" alt="pillars of cration">
+            </div>
+            <div class="text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic adipisci repellat aliquam reprehenderit placeat veritatis. Eum veniam quis pariatur, saepe iusto natus, deserunt aut tempora fugiat, quam delectus amet!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="footer">
+            <span style="color: red;">Lorem,</span> ipsum dolor sit amet consectetur adipisicing elit. Velit perspiciatis odio praesentium commodi. Earum vitae, ea perspiciatis natus velit rerum explicabo temporibus fugit nemo. Optio molestiae ea id delectus repellendus.
+            <br>
+            <span class="end"><br>Made by Waleed Ajmal
+            <br>Copyright © 2024</span>
+        </div>
+    </section>
+    <script>
+                let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                };
+            });
+        };
+    </script>
+</body>
+</html>
